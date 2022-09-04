@@ -1,5 +1,5 @@
 from fonction_lecture import lecture_txt, random_word, enlever_accent
-from fonction_affichage import remplacement_see
+from fonction_affichage import gagner, remplacement_see, tiret_espace, tiret_espace_lettre
 from fonctiontest import lettredansmot,positiondeslettres,testlettre
 from fonctionstockage import stock, stockage, test_stockage
 NBESSAIE = 10  
@@ -7,11 +7,13 @@ NBESSAIE = 10
 if __name__ == "__main__" :
     
     mot = random_word(lecture_txt())
+    mot = mot.lower()
     mot = enlever_accent(mot)
     print(mot)
     see = "_"*len(mot)   
-     
-    while NBESSAIE > 0 or lettre == "EXIT" :
+    if tiret_espace(mot) != 0 :
+        see = remplacement_see(tiret_espace_lettre(mot), tiret_espace(mot), see) 
+    while NBESSAIE > 0 :
         lettre = []
         
         while testlettre(lettre) == False :
@@ -27,6 +29,9 @@ if __name__ == "__main__" :
             NBESSAIE-=1
             
         print(see)
+        if gagner(see) :
+            print("YOU WIN !!!")
+            exit()
         print("essaies ; ", NBESSAIE)
         
     print("PERDU")
