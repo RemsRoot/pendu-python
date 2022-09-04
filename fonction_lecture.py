@@ -13,12 +13,16 @@ def random_word(liste_mots):
 
 def enlever_accent(mot):
     liste_accent = [["é", "e"],
-                    ["ê", "e"],
                     ["è", "e"],
-                    ["â", "a"],
                     ["ç", "c"],
                     ["à", "a"],
-                    ["ù", "u"]]
+                    ["ù", "u"],
+                    ["ï", "i"],
+                    ["ê", "e"],
+                    ["î", "i"],
+                    ["â", "a"],
+                    ["ô", "o"],
+                    ["û", "u"]]
     mot_accent = mot
     
     for couple in liste_accent :
