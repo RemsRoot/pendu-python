@@ -18,11 +18,15 @@ def enlever_accent(mot):
                     ["â", "a"],
                     ["ç", "c"],
                     ["à", "a"],
-                    ["ù", "u"]
-    ]
+                    ["ù", "u"]]
+    mot_accent = mot
+    
     for couple in liste_accent :
-        mot_accent = [element.replace(couple[0], "e") for element in mot]
+        mot_accent = [element.replace(couple[0], couple[1]) for element in mot_accent]
+        
     mot_ok = ""
+    
     for lettre in mot_accent :
         mot_ok += lettre
+        
     return mot_ok
