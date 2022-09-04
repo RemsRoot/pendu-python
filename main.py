@@ -9,10 +9,11 @@ if __name__ == "__main__" :
     mot = random_word(lecture_txt())
     mot = mot.lower()
     mot = enlever_accent(mot)
-    print(mot)
     see = "_"*len(mot)   
     if tiret_espace(mot) != 0 :
         see = remplacement_see(tiret_espace_lettre(mot), tiret_espace(mot), see) 
+        
+        
     while NBESSAIE > 0 :
         lettre = []
         
