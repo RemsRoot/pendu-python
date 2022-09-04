@@ -16,7 +16,7 @@ if __name__ == "__main__" :
         
     while NBESSAIE > 0 :
         lettre = []
-        
+        print(see)
         while testlettre(lettre) == False :
             lettre = input("Veuillez entrer une lettre : ")
         if test_stockage(lettre) :
@@ -28,8 +28,7 @@ if __name__ == "__main__" :
             see = remplacement_see(lettre, positiondeslettres(lettredansmot(lettre, mot),mot, lettre), see)
         else:
             NBESSAIE-=1
-            
-        print(see)
+        
         if gagner(see) :
             print("YOU WIN !!!")
             exit()
